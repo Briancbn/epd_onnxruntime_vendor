@@ -15,7 +15,7 @@ macro(build_onnxruntime)
   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14 -w")
 
   list(APPEND extra_cmake_args "-Donnxruntime_BUILD_UNIT_TESTS=OFF")
-  list(APPEND extra_cmake_args "-Donnxruntime_USE_OPENMP=ON")
+  # list(APPEND extra_cmake_args "-Donnxruntime_USE_OPENMP=ON")
   list(APPEND extra_cmake_args "-Donnxruntime_BUILD_SHARED_LIB=ON")
   list(APPEND extra_cmake_args "-DCMAKE_CXX_COMPILER=${CMAKE_CXX_COMPILER}")
   list(APPEND extra_cmake_args "-DCMAKE_CXX_FLAGS=${CMAKE_CXX_FLAGS}")
@@ -44,7 +44,7 @@ macro(build_onnxruntime)
   include(ExternalProject)
   ExternalProject_Add(onnxruntime
     GIT_REPOSITORY https://github.com/microsoft/onnxruntime
-    GIT_TAG 36dc057913f968566eaa1646cb5db41d8c5e7654
+    GIT_TAG v1.12.1
     # GIT_SUBMODULES_RECURSE 1
     LOG_CONFIGURE ${should_log}
     LOG_BUILD ${should_log}
