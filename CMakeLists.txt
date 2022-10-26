@@ -44,7 +44,7 @@ macro(build_onnxruntime)
   include(ExternalProject)
   ExternalProject_Add(onnxruntime
     GIT_REPOSITORY https://github.com/microsoft/onnxruntime
-    GIT_TAG v1.12.1
+    GIT_TAG v1.8.1
     # GIT_SUBMODULES_RECURSE 1
     LOG_CONFIGURE ${should_log}
     LOG_BUILD ${should_log}
